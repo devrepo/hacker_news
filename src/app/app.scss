@@ -1,0 +1,16 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma";
+
+.is-bottom-aligned {
+  align-items: flex-end;
+}
+.is-text-centered {
+  text-align: center;
+}
+.is-left-aligned {
+  text-align: left;
+}
+.feed-button {
+  height: 1.5rem;
+  padding: 4px 0;
+}
