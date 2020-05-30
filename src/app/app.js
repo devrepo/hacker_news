@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Provider store={store}>
-            <Route path="/" exact render={( props ) => ( <Board /> )} />
+            <Route path="/" exact render={( props ) => ( <Board {...props}/> )} />
       </Provider>
       <GlobalStyle />
     </div>

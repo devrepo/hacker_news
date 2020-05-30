@@ -1,17 +1,17 @@
 import axios from 'axios';
 
-import { ENDPOINTS_BASE_URL } from '../constants';
+import { ENDPOINTS_BASE_URL, NO_OF_POSTS_PER_PAGE } from '../constants';
 import * as types from '../action_types';
 
-export const getFeeds = (boardId) => {
+export const getFeeds = (pageNum = 0) => {
     return (dispatch) => {
         dispatch(getFeedStarted());
         axios
             .get(ENDPOINTS_BASE_URL, {
                 params: {
-                    tags: 'front_page',
-                    hitsPerPage: 30,
-                    page: 0
+                    tags: 'story',
+                    hitsPerPage: NO_OF_POSTS_PER_PAGE,
+                    page: pageNum
                 }
             })
             .then((res) => {

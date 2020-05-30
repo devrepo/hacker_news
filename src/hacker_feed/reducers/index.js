@@ -12,7 +12,8 @@ const initialState = {
 const {
     GET_FEED_STARTED,
     GET_FEED_SUCCESS,
-    GET_FEED_FAILURE
+    GET_FEED_FAILURE,
+    UPVOTE_FEED_SUCCESS
 } = types;
 
 // Helper function to avoid switch cases and running the reducers
@@ -46,5 +47,6 @@ const reportError = (state, action) => {
 export default createReducer(initialState, {
     [GET_FEED_STARTED]: startLoading,
     [GET_FEED_SUCCESS]: feedReducer.getFeed,
-    [GET_FEED_FAILURE]: reportError
+    [GET_FEED_FAILURE]: reportError,
+    [UPVOTE_FEED_SUCCESS]: feedReducer.upVoteFeed
 });
