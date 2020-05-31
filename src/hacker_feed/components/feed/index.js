@@ -63,7 +63,11 @@ class Feeds extends React.Component {
         const feed = hits && hits.map ( (hit, index) => {
             const className = (index % 2) ? "dark-gray-background-mobile": "gray-background-mobile"
             return (
+<<<<<<< HEAD
                 <div data-testid={lastNumRecords+index+1} key={hit.objectID} className={className} >
+=======
+                <div key={hit.objectID} className={className} >
+>>>>>>> e857136075b815cb6fb252810e3c84e5861af3b1
                     {lastNumRecords+index+1}. <UpVoteButton onClick={()=> this.handleUpVote(index)}/> 
                     <div className="div-inline-table">
                         <span className="title-text">{hit.title}</span> 

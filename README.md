@@ -57,3 +57,4 @@ This is to check the coverage parcentage of the code.
 ## TODOs
 
 -- Currently the coverage is not 90%.
+-- Can still optimize the resources.

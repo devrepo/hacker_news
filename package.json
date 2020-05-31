@@ -38,10 +38,14 @@
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "build-sw": "node ./src/sw-build.js",
     "local": "yarn build && serve -s build",
+<<<<<<< HEAD
     "server": "node server/index.js",
     "ci": "CI=true yarn test",
     "coverage": "yarn test -- --coverage",
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
+=======
+    "server": "node server/index.js"
+>>>>>>> e857136075b815cb6fb252810e3c84e5861af3b1
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -57,6 +61,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   },
   "jest": {
     "collectCoverageFrom": [
@@ -73,5 +78,7 @@
       }
     },
     "coverageReporters": ["text"]
+=======
+>>>>>>> e857136075b815cb6fb252810e3c84e5861af3b1
   }
 }
