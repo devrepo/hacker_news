@@ -56,11 +56,13 @@ class Feeds extends React.Component {
     }
 
     layoutMobileFeed(hits){
+        const { page, hitsPerPage } = this.props;
+        const lastNumRecords = page * hitsPerPage;
         const feed = hits && hits.map ( (hit, index) => {
             const className = (index % 2) ? "dark-gray-background-mobile": "gray-background-mobile"
             return (
                 <div key={hit.objectID} className={className} >
-                    {index+1}. <UpVoteButton onClick={()=> this.handleUpVote(index)}/> 
+                    {lastNumRecords+index+1}. <UpVoteButton onClick={()=> this.handleUpVote(index)}/> 
                     <div className="div-inline-table">
                         <span className="title-text">{hit.title}</span> 
                         <br/><PostURL {...hit} /><span className="gray-text"> by </span><Author {...hit}/>
