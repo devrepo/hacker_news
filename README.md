@@ -40,3 +40,20 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `yarn server`
 
 First the project needs to be built using `build` command. So that it can be served as Server Side Rendering.
+
+### `yarn local`
+
+This command lets the production build test on local. It builds Service Worker as well.
+
+### `yarn ci`
+
+This is to run tests in CI environments. It runs once and provide the results.
+
+### `yarn coverage`
+
+This is to check the coverage parcentage of the code.
+
+
+## TODOs
+
+-- Currently the coverage is not 90%.

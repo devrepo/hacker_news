@@ -43,7 +43,7 @@ const VoteChart = (props) => {
                     axes={axes}
                     getLabel={getLabel} tooltip/> }
             </div>
-            <div className="legend-x">ID</div>
+            {props.hits && <div className="legend-x">ID</div>}
         </div>
     )
 }

@@ -6,7 +6,7 @@ const Pagination = (props) => {
         <div className="pagination level">
             <div className="level-right">
                 <span className="level-item">
-                    <button className="paginator-button" onClick={props.onPrevious}>Previous</button> | <button className="paginator-button" onClick={props.onNext}>Next</button>
+                    <button className="paginator-button" data-testid="previous" onClick={props.onPrevious}>Previous</button> | <button className="paginator-button" data-testid="next" onClick={props.onNext}>Next</button>
                 </span>
             </div>
         </div>

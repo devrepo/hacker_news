@@ -27,10 +27,12 @@ class Feeds extends React.Component {
     }
 
     layoutFeeds(hits){
+        const { page, hitsPerPage } = this.props;
+        const lastNumRecords = page * hitsPerPage;
         const feed = hits && hits.map ( (hit, index) => {
             const className = (index % 2) ? "dark-gray-background": "gray-background"
             return (
-                <div key={hit.objectID} className={className} >
+                <div data-testid={lastNumRecords+index+1} key={hit.objectID} className={className} >
                     <div className="columns is-bottom-aligned is-text-centered is-mobile">
                         <div className="column is-1-desktop is-2-mobile">
                             {hit.num_comments}
@@ -61,7 +63,7 @@ class Feeds extends React.Component {
         const feed = hits && hits.map ( (hit, index) => {
             const className = (index % 2) ? "dark-gray-background-mobile": "gray-background-mobile"
             return (
-                <div key={hit.objectID} className={className} >
+                <div data-testid={lastNumRecords+index+1} key={hit.objectID} className={className} >
                     {lastNumRecords+index+1}. <UpVoteButton onClick={()=> this.handleUpVote(index)}/> 
                     <div className="div-inline-table">
                         <span className="title-text">{hit.title}</span> 
