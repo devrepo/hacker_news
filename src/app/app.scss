@@ -19,18 +19,6 @@ a:hover, a:active {
   color: #828282;
 }
 
-.small-button {
-  @extend .button;
-  @extend .is-text;
-  @extend .is-small;
-  padding: 0;
-  /*height: auto;
-  line-height: normal;
-  margin-top: 1px;
-  border: 0;
-  font-size: 1rem;*/
-}
-
 .title-text{
   font-size: 1.2rem;
 }
@@ -50,6 +38,8 @@ a:hover, a:active {
   padding-right: 30px;
   color: rgb(255,102,0);
   font-weight: 700;
+  padding-bottom: 3px;
+  border-bottom: 3px solid rgb(255,102,0);
 }
 
 .pagination .level-right {
