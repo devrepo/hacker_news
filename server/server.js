@@ -8,7 +8,11 @@ import { StaticRouter } from 'react-router-dom';
 
 import App from "../src/app/app";
 
-const PORT = 8000;
+let PORT = process.env.PORT;
+if (PORT == null || PORT == "") {
+  PORT = 8000;
+}
+
 
 const app = express();
 
