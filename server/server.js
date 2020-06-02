@@ -5,7 +5,7 @@ import path from 'path';
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from 'react-router-dom';
-
+import sslRedirect from "heroku-ssl-redirect";
 import App from "../src/app/app";
 
 let PORT = process.env.PORT;
@@ -43,7 +43,7 @@ app.use("^/$", (req, res, next) => {
 });
 
 app.use(express.static(path.resolve(__dirname, '..', 'build')))
-
+app.use(sslRedirect());
 app.listen(PORT, () => {
   console.log(`App launched on ${PORT}`);
 });

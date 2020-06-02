@@ -29,7 +29,7 @@ if ('function' === typeof importScripts) {
         });
         
    
-        workbox.routing.registerRoute(
+        /*workbox.routing.registerRoute(
             /\.(?:png|gif|jpg|jpeg)$/,
             new workbox.strategies.CacheFirst({
             cacheName: 'images',
@@ -40,12 +40,18 @@ if ('function' === typeof importScripts) {
                 }),
             ],
             })
-        );
+        );*/
 
-        workbox.routing.registerRoute(
-            ({url}) => url.origin === 'https://hn.algolia.com/' &&
-                       url.searchParams.get('page'),
-            new workbox.strategies.CacheFirst({
+        const matchCb = ({url, request, event}) => {
+            //var patt = new RegExp("^https:\/\/hn\.algolia\.com\/api\/v1\/(search?(.*)?)?");
+            //var res = patt.test(url.pathname);
+            var res = url.pathname == "https://hn.algolia.com/api/v1/search?tags=story&hitsPerPage=30&page=0"
+            console.log("URL matches");
+            return res
+        };
+
+        workbox.routing.registerRoute(new RegExp('^https:\/\/hn\.algolia\.com\/api\/v1\/(search?(.*)?)?'),
+            new workbox.strategies.NetworkFirst({
                 cacheName: 'api-cache',
                 plugins: [
                     new workbox.cacheableResponse.Plugin({
